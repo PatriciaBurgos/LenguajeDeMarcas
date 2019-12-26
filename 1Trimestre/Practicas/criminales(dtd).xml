@@ -1,0 +1,31 @@
+<!DOCTYPE criminales [
+
+<!ELEMENT criminales (criminal)+>
+<!ELEMENT criminal (nombre, fechaNacimiento, descripcionFisica, historialMedico, residencia, estado, delitos, juzgado, penaCarcel, pena)+>
+<!ATTLIST criminal dni ID #REQUIRED>
+<!ATTLIST criminal genero CDATA #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT fechaNacimiento (dia, mes, año)>
+<!ELEMENT dia (#PCDATA)> 
+<!ELEMENT mes (#PCDATA)> 
+<!ELEMENT año (#PCDATA)> 
+<!ELEMENT descricionFisica (#PCDATA)>
+<!ELEMENT historialMedico EMPTY>
+<!ELEMENT residencia (direccion, localidad, codigoPostal, provincia)+>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT codigoPostal (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT estado (libertad | carcel)>
+<!ELEMENT libertad (#PCDATA)>
+<!ELEMENT carcel (#PCDATA)>
+<!ELEMENT delitos (#PCDATA)>
+<!ELEMENT juzgado (si | no)>
+<!ELEMENT si (#PCDATA)>
+<!ELEMENT no (#PCDATA)>
+<!ELEMENT penaCarcel (#PCDATA)>
+<!ELEMENT pena (enProceso | completa | sinRealizar)>
+<!ELEMENT enProceso (#PCDATA)>
+<!ELEMENT completa (#PCDATA)>
+<!ELEMENT sinRealizar (#PCDATA)>
+]

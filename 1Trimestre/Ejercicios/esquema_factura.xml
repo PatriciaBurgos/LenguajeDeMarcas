@@ -1,0 +1,58 @@
+<? xml version "1.0" encoding = "UTF -8" ?>
+<xs: schema xmlns: xs= "http://www.w3.org/2001/XMLSchema-instance" >
+	<xs: element name = "factura">
+		<xs: simpleType>
+			<xs: element name= numero type= integer>
+				<xs: minExclusive value= "0">
+			<xs: element name= fecha type= date>
+			<xs: element name= moneda type= string>
+		<xs: complexType>
+			<xs: sequence>
+				<xs: element name= datos-emisor type= emisor-type maxoccurs= "unbounded">
+					<xs: simpleType>
+						<xs: element name= nombre type= string>
+						<xs: element name= cif type= string>
+							<xs: restriction base= "xs: string">
+								<xs: pattern value= "[A-Z] [1-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9]">	
+							</xs: restriction>
+						<xs: element name= telefono type= string>
+							<xs: restriction base= "xs: string">
+								<xs: pattern value= "[0-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9]">
+							</xs: restriction>
+					</xs: simpleType>
+			</xs: sequence>
+		</xs: complexType>
+		<xs: complexType>
+			<xs: sequence>
+				<xs: element name= datos-cliente type= cliente-type maxoccurs= "unbounded">
+					<xs: simpleType>
+						<xs: element name= nombre type= string>
+						<xs: element name= cif type= string>
+							<xs: restriction base= "xs: string">
+								<xs: patter value= "[A-Z] [1-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9]">	
+							</xs: restriction>
+						<xs: element name= telefono type= string>
+							<xs: restriction base= "xs: string">
+								<xs: pattern value= "[0-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9] [0-9]">
+							</xs: restriction>
+						</xs: simpleType>
+				</xs: sequence>
+			</xs: complexType>
+			<xs: complexType>
+				<xs: sequence>	
+					<xs: element name= detalle-factura type= string maxoccurs= "unbounded">
+						<xs: attribute name= importe type= decimal>
+							<xs: simpleType>
+								<xs: element name= linea type= string>
+									<xs: attribute name= codigo-articulo type= tipoPrecio use= "required">
+									<xs: element name= descripcion type= string>
+									<xs: element name= cantidad type= integer>
+									<xs: element name= oferta type= string />
+									<xs: element name= pvp type= decimal>
+							</xs: simpleType>
+				</xs: sequence>
+			</xs: complexType>
+		</xs: element>
+	</xs: schema>
+				
+										

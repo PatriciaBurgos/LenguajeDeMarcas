@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<xs:schema xmlns: xs="http://www.w3.org/2001/XMLSchema-instance">
+
+	<xs:element name="registro">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="personas"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:group name="personas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="usuario" type="tipoPersona"/>
+				<xs:element name="empleado" type="tipoPersonaAmpliado"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:group>
+
+	<xs:group name="tipoPersona">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="apellidos-y-nombre"/>
+				<xs:element name="email"/>
+				<xs:element name="conexiones"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:group>
+
+	<xs:group name="tipoPersonaAmpliado>
+		
+
+
+				
+
+

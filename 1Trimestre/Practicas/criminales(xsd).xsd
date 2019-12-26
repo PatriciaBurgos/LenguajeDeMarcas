@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="criminales">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="criminal">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="grupoCriminal"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:group name="grupoCriminal">
+		<xs:sequence>
+			<xs:element name="nombre" type="tipoNombre"/>
+			<xs:element name="fechaNacimiento">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="dia" type="xs:positiveInteger"/>
+						<xs:element name="mes" type="xs:positiveInteger"/>
+						<xs:element name="ano" type="xs:positiveInteger"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="altura" type="xs:positiveInteger"/>
+			<xs:element name="descripcionFisica" type="tipoDescripcion"/>
+			<xs:element name="histrialMedico" type="xs:boolean"/> 
+			<xs:element name="residencia">
+				<xs:group ref="tipoResidencia"/>
+			</xs:element>
+			<xs:element name="estado" type="tipoEstado"/>
+			<xs:element name="delitos" type="xs:string"/>
+			<xs:element name="juzgado" type="xs:boolean"/>
+			<xs:element name="penaCarcel" type="xs:string"/>
+			<xs:element name="pena" type="tipoPena"/>
+		</xs:sequence>
+		<xs:attribute name="dni">
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z]+[1-9]{8}[A-Z]"/>
+			</xs:restriction>
+		</xs:attribute>
+		<xs:attribute name="genero">
+			<xs:choice>
+				<xs:element name="M"/>
+				<xs:element name="H"/>
+			</xs:choice>
+		</xs:attribute>
+	</xs:group>
+
+	<xs:group name="residencia">
+		<xs:sequence>
+			<xs:element name="direccion">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLenght value="3"/>
+						<xs:maxLenght value="120"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="localidad" type="tipoTexto"/>
+			<xs:element name="codigoPostal" type="tipoCodigo"/>
+			<xs:element name="provincia" type="tipoTexto"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:simpleType name="tipoNombre">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z]([a-z])*,[A-Z]([a-z])*[A-Z]([a-z])*"/>
+			<xs:minLenght value="5"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="tipoDescripcion">
+		<xs:restriction base="xs:string">
+			<xs:minLenght value="3"/>
+			<xs:maxLength value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="tipoCodigo">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[0-9]{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="tipoTexto">
+		<xs:restriction base="xs=string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="80"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="tipoEstado">
+		<xs:choice>
+			<xs:element name="libertad"/>
+			<xs:element name="carcel"/>
+		</xs:choice>
+	</xs:simpleType>
+
+	<xs:simpleType name="tipoPena">
+		<xs:choice>
+			<xs:element name="enProceso"/>
+			<xs:element name="completa"/>
+			<xs:element name="sinRealizar"/>
+		</xs:choice>
+	</xs:simpleType>
+
+</xs:schema>

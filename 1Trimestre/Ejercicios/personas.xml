@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personas xmlns:xsi="http"
+xsi:>
+	<persona>
+		Me llamo <nombre> Patricia </nombre> y vivo en <ciudad> Granada </ciudad>. Tengo <edad> 19 </edad> años.
+	</persona>
+</personas>
+
+//Lo que aparece en el esquema es que tiene que ser contenido mixed, por lo que tiene que haber texto entre los elementos.

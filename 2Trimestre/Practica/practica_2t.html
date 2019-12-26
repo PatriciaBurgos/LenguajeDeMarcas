@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Práctica 2º trimestre</title>
+	<meta charset="UTF-8">
+	<meta name="descripcion" content="Práctica de página web">
+	<meta keywords= "HTML, CSS">
+	<meta name="author" content="Patricia Burgos">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="https://demo.yootheme.com/themes/joomla/2019/craft/templates/yootheme/vendor/yootheme/theme/platforms/joomla/assets/images/favicon.png">
+
+	<style>
+		@font-face{
+			font-family: 'Barlow';
+			src: url(font/BarlowCondensed-Medium.ttf);
+		}
+		body {
+			font-family: 'Barlow','Arial', Sans-serif;
+			text-transform: uppercase;
+			color: #262626;
+			margin:0;
+			font-size: 100%;
+		}
+		header { /*Empieza los estilos del encabezado*/
+			min-width: 100%;
+			min-height: 10%;
+			font-size: 16px;
+			margin-top:20px;
+			float: left;
+			overflow: auto;
+
+		}
+		.listas_header {
+			float: left;
+			overflow: auto;
+			text-decoration: none;
+		}
+		.listas_header li {
+			display: inline-block;
+			margin-left:40px;
+			margin-right:40px;
+		}
+		.listas_header li:hover {
+			border-bottom: 5px solid #e8ae62;
+		}
+		#logo {
+			float: left;
+			overflow: auto;
+			margin-left:12%;
+			margin-right: 40px;
+			margin-top: 10px;
+		} 
+		.home{
+			border-bottom: 5px solid #e8ae62;
+		}/*Fin estilos del encabezado*/
+		.fondo_img {/*Inicio de estilos de la seccion con imagen de fondo */
+			background-image: url(img/fondo1.PNG);
+			background-repeat: no-repeat;
+			background-size: cover;
+			min-width: 100%;
+			float: left;
+		}
+		.text_inicio {
+			text-align: center;
+			padding:40px;
+			color: white;
+			margin-top: 70px;
+		}
+		.text_inicio p {
+			font-size: 22px;
+			color:rgba(255,255,255,.5)!important;
+			margin-bottom: 0;
+		}
+		.text_inicio h1 {
+			font-size: 128px;
+			margin:0;
+		}
+		#seccion_imagenes {
+			height: 100px;
+			margin-left: 33%;
+		}
+
+		.imgenes img{
+			width: 150px;
+			height: 100px;
+			float: left;
+			display: inline-block;
+			margin:5px;
+
+		} 
+		.border_primero img{
+			outline: 5px solid white;
+			outline-offset: -5px;			
+		}
+		.border img:hover {
+			outline: 5px solid #e8ae62;
+			outline-offset: -5px;
+			opacity: 1;
+
+		}
+		.border img{
+			opacity: 0.8;
+		}
+		.flechas {
+			float: right;
+			display: block;
+			margin-top: 16px;
+			margin-bottom: 20px;
+		}
+		.flechas a{
+			color: #ffd49b;
+			padding:18px 22px;
+			text-decoration: none;
+			width: 12px;
+			height: 20px;
+			background-color: #262626;
+			font-size: 22px;
+			margin-left: -5px;
+		}
+
+		.flechas a:hover{
+			background-color:#ffd49b;
+			color: #262626;
+		}/*Fin de estilos de la seccion con imagen de fondo */
+
+		#centrado { /* Inicio de los estilos de la seccion de texto */
+			text-align: center;
+			padding-top: 140px;
+    		padding-bottom: 140px;
+    		float: left;
+    		margin-left: 20%;
+		}
+		#centrado h2 {
+			text-align: center;
+			font-size: 40px;
+		}
+		h2 a{
+			color: #ffd49b;
+		}/* Fin de los estilos de la seccion de texto */
+		.fondos_imagenes{ /* Inicio de los estilos de la seccion con efectos de imagenes */
+			float: left;
+			overflow: hidden;
+		}	
+		.primero {
+			width: 425px;
+			height: 420px;
+			padding-left: 17px;
+			float: left;
+			text-align: center;
+		}
+		.primero h3{
+			font-size: 80px;
+			margin-bottom: 20px;
+			line-height: 1;
+		}
+		.primero a {
+			font-size: 18px;
+			margin-top: 20px;
+			border-bottom: 2px solid #e8ae62;
+			color: black;
+			text-decoration:none;
+		}
+		.primero a:hover {
+			color: #e8ae62;
+			text-decoration: none;
+		}
+		
+		.segundo {
+			width: 435px;
+			height: 420px;
+			float: left;
+			background-image:url(img/uno.PNG); 
+			background-repeat: no-repeat;
+			background-size: 100%;
+			padding-left: 10px;
+			transition: background-size 0.5s;
+		}
+		.segundo a{
+			width: 425px;
+			height: 420px;
+		}
+		.segundo:hover {
+			background-size: 120%;
+		}
+		.tercero {
+			width: 435px;
+			height: 420px;
+			float: left;
+			background-image:url(img/dos.PNG); 
+			background-repeat: no-repeat;
+			background-size: 100%;
+			padding-left: 10px;
+			transition: background-size 0.5s;
+		}
+		.tercero a{
+			width: 425px;
+			height: 420px;
+		}
+		.tercero:hover {
+			background-size: 120%;
+		}
+		.cuarto {
+			width: 425px;
+			height: 420px;
+			float: left;
+			background-image:url(img/tres.PNG); 
+			background-repeat: no-repeat;
+			background-size: 100%;
+			margin-top: 1%;
+			padding-left: 10px;
+			transition: background-size 0.5s;
+		}
+		.cuarto a{
+			width: 425px;
+			height: 420px;
+		}
+		.cuarto:hover {
+			background-size: 120%;
+		}
+		.quinto {
+			width: 435px;
+			height: 420px;
+			float: left;
+			background-image:url(img/cuatro.PNG); 
+			background-repeat: no-repeat;
+			background-size: 100%;
+			margin-top: 1%;
+			padding-left: 10px;
+			transition: background-size 0.5s;
+		}
+		.quinto a{
+			width: 435px;
+			height: 420px;
+		}
+		.quinto:hover {
+			background-size: 120%;
+		}
+		.sexto {
+			width: 435px;
+			height: 420px;
+			float: left;
+			background-image:url(img/cinco.PNG); 
+			background-repeat: no-repeat;
+			background-size: 100%;
+			margin-top: 1%;
+			padding-left: 10px;
+			transition: background-size 0.5s;
+		}
+		.sexto a{
+			width: 435px;
+			height: 420px;
+		}
+		.sexto:hover {
+			background-size: 120%;
+		}
+		h4{
+			margin-bottom: 0;
+		}
+		.segundo_dos {
+			width: 340px;
+			height: 297px;
+			margin-top: 80px;
+   			margin-left: 40px;
+			background-color: white;
+			text-align: center;
+		}
+		.segundo_dos h4{
+			font-size: 60px;
+			padding-top: 30px;
+		}
+		.segundo_dos p{
+			font-size: 16px;
+			border-bottom: 2px solid #e8ae62;
+			width: 100px;
+			margin-left: 120px;
+		}
+		.tercero_dos {
+			width: 340px;
+			height: 297px;
+			margin-top: 80px;
+   			margin-left: 40px;
+			background-color: white;
+			text-align: center;
+		}
+		.tercero_dos h4{
+			font-size: 60px;
+			padding-top: 30px;
+		}
+		.tercero_dos p{
+			font-size: 16px;
+			border-bottom: 2px solid #e8ae62;
+		    width: 100px;
+		    margin-left: 120px;
+		}
+		.cuarto_dos {
+			width: 340px;
+			height: 297px;
+			margin-top: 80px;
+   			margin-left: 40px;
+			background-color: white;
+			text-align: center;
+		}
+		.cuarto_dos h4{
+			font-size: 60px;
+			padding-top: 60px;
+		}
+		.cuarto_dos p{
+			font-size: 16px;
+			border-bottom: 2px solid #e8ae62;
+		    width: 100px;
+		    margin-left: 120px;
+		}
+		.quinto_dos {
+			width: 340px;
+			height: 297px;
+			margin-top: 80px;
+   			margin-left: 40px;
+			background-color: white;
+			text-align: center;
+		}
+		.quinto_dos h4{
+			font-size: 60px;
+			padding-top: 30px;
+		}
+		.quinto_dos p{
+			font-size: 16px;
+			border-bottom: 2px solid #e8ae62;
+			width: 100px;	
+			margin-left: 120px;	
+		}
+		.sexto_dos {
+			width: 340px;
+			height: 297px;
+			margin-top: 80px;
+   			margin-left: 40px;
+			background-color: white;
+			text-align: center;
+		}
+		.sexto_dos h4{
+			font-size: 60px;
+			padding-top: 30px;
+		}
+		.sexto_dos p{
+			font-size: 16px;
+			border-bottom: 2px solid #e8ae62;
+			width: 100px;
+			margin-left: 120px;
+		} /* Fin de los estilos de la seccion con efectos de imagenes */
+		.new{ /* Inicio de los estilos de la seccion con texto y una imagen al lado */
+			padding-top: 210px;
+			padding-bottom: 210px;
+			float: left;
+			overflow: auto;
+		}
+		.tamaño {
+			width: 376px;
+			height: 472px;
+			padding-left: 70px;
+			float: left;
+		}
+		.tamaño a{
+			font-size: 18px;
+			border-bottom: 2px solid #e8ae62;
+			color:black;
+			text-decoration: none;
+		}
+		.tamaño a:hover {
+			color:#e8ae62;
+		}
+		h3{
+			font-size: 56px;
+		}
+		.descrip {	
+			font-size: 16px;
+			line-height: 1.5;
+		}
+		#img_madera {
+			float: left;
+		}
+		#img_madera img{
+			width: 900px;
+ 		    float: left;
+  			overflow: auto;
+  			padding-top: 200px;
+		}/* Fin de los estilos de la seccion con texto y una imagen al lado */
+		.madera{ /* Inicio de los estilos de la seccion con los fundadores */
+			float: left;
+			overflow: auto;
+			background-image:url(img/fondo_madera.PNG); 
+			background-repeat: no-repeat;
+			background-size: 100%;
+			max-width: 100%;
+			padding-bottom: 140px;
+		}
+		.fondo_blanco{
+			padding-left: 40px;
+   			padding-right: 40px;
+   			background-color: white;
+   			width: 1189px;
+   			float: left;
+   			padding-top: 50px;
+   			margin-top: 100px;
+   			margin-left: 40px;
+   			margin-right: 40px;
+   			
+		}
+		.fondo_blanco h3{
+			font-size: 40px;
+		}
+		.fondo_blanco a {
+			border-bottom: 2px solid #e8ae62;
+			font-size: 18px;
+			text-decoration: none;
+			color: black;
+		}
+		.fondo_blanco a:hover {
+			color: #e8ae62;
+		}
+		.texto_fondo {
+			padding-top: 70px;
+   			padding-bottom: 70px;
+		}
+		.imagenes_autores h3{
+			font-size: 28px;
+			margin: 0;
+			margin-top: 280px;
+		}
+		.imagenes_autores p{
+			font-size: 22px;
+			color: #e8ae62;
+			margin: 0;
+			margin-top: 10px;
+		}
+		.imagenes_autores img{
+			width: 287px;
+			height: 266px;
+			float: left;
+		}
+		#autor_uno {
+			float: left;
+		}
+		#autor_dos{
+			float: left;
+			margin-left: 40px;
+		} /* Fin de los estilos de la seccion con los fundadores */
+		#tres_imagenes{ /* Inicio seccion con texto y tres imagenes al lado*/
+			float: left;
+		}
+		#tres_imagenes img{
+			float: left;
+			width: 277px;
+			height: 495px;
+			padding-left: 15px;
+		} /* Fin seccion con texto y tres imagenes al lado*/
+		#back { /*Inicio de los estilos de la seccion con fondo de madera y frase*/
+			background-image: url(img/back_madera.PNG);
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 574px;
+			float: left;
+			margin: 40px;
+		}
+		#back_madera {
+			width: 1269px;
+			height:574px;
+			text-align: center;
+			color: white;
+		}
+		#back_madera h2{
+			font-size: 56px;
+			margin-top: 200px;
+			margin-bottom: 80px;
+		}
+		#back_madera a{
+			font-size: 28px;
+			color: white;
+			text-decoration: none;
+			border-style: solid;
+ 			border-width: 2px;
+			border-color: white;
+			padding: 10px 25px;
+		}
+		#back_madera a:hover{
+			background-color: white;
+			color: black;
+		} /*Fin de los estilos de la seccion con fondo de madera y frase*/
+		#contact { /* Inicio de los estilos de la seccion de contactos */
+			padding-left: 70px;
+			padding-top: 140px;
+  			padding-bottom: 140px;
+			color: #9c9c9c;
+			font-size: 15px;
+			float: left;
+			height: 150px;
+			text-decoration: none;
+		}
+		#contact h6 {
+			font-size: 15px;	
+			width: 400px;
+		}
+		#contact a {
+			color: #9c9c9c;
+			text-decoration: none;
+		}
+		#contact a:hover {
+			color: #464646;
+		}
+		#contact p{
+			border-style: solid;
+ 			border-width: 2px;
+			border-color: #F7F7F7;
+    		padding: 12px;
+    		width: 400px;
+    		background-color: #F7F7F7;
+		}
+		.list {
+			width: 173px;
+			height: 94px;
+			float: left;
+			margin:40px;
+			margin-left: 60px;
+		}
+		.list ul{
+			list-style-type:none;
+		}
+		#email{
+			margin: 0;
+			float: left;
+			overflow: auto;
+		} /* Fin de los estilos de la seccion de contactos */
+		#pie{ /* Inicio de los estilos del pie de pagina */
+			border-style: solid;
+ 			border-width: 2px;
+			border-color: #F7F7F7;
+    		padding: 15px;
+    		text-decoration: none;
+    		float: left;
+    		overflow: auto;
+    		background-color: #F7F7F7;
+    		color: #9c9c9c;
+    		padding-bottom: 0;
+    		font-size: 20px;
+		}
+		#pie p{
+			margin-right: 200px;
+			width: 400px;
+			float: left;
+		}
+		#pie img{
+			float: left;
+		}
+		#pie a{
+			color: #9c9c9c;
+			float: right;
+			text-decoration: none;
+			margin-left: 100px;
+			font-size: 20px;
+		}
+		#enlace {
+			float: right;
+			margin-left: 240px;
+			color: #9c9c9c!important;
+			margin-top: 10px;
+		}
+		#enlace a:hover{
+			color:black;
+		} /* Fin de los estilos del pie de pagina */
+
+	</style>
+
+</head>
+
+<body>
+	<header> <!--Empieza el encabezado-->
+		<div class="listas_header" >
+			<ul>
+				<li class="home"><a href="#"></a>home</li>
+				<li><a href="#"></a>services</li>
+				<li><a href="#"></a>materials</li>
+			</ul>
+		</div>
+		<div id="logo">
+			<a href="#"><img src="img/logo.PNG" alt="Logotipo de la empresa"></a>
+		</div>
+		<div class="listas_header">
+			<ul>
+				<li><a href="#"></a>about us</li>
+				<li><a href="#"></a>portfolio</li>
+				<li><a href="#"></a>contact</li>
+				<li><a href="#"></a>zoo</li>
+			</ul>
+		</div>
+	</header> <!-- Fin del encabezado-->
+
+	<section class="fondo_img"> <!--Inicio de la seccion con imagen de fondo -->
+		<div class="text_inicio">
+			<p>everything we do is</p>
+			<h1>Handsmade</h1>
+		</div>
+		<div id = "seccion_imagenes"> <!--imagenes-->
+			<div class = "imgenes">
+				<a class="border_primero" href="#"><img src="img/img1.PNG" alt="Imagen de madera"></a>
+			</div>
+			<div class = "imgenes">
+				<a class ="border" href="#"><img src="img/img2.PNG" alt="Imagen de un serrucho"></a>
+			</div>
+			<div class = "imgenes">
+				<a class ="border" href="#"><img src="img/img3.PNG" alt="Imagen de un carpintero"></a>
+			</div>
+		</div>
+		<div class = "flechas"> <!--flechas-->
+				<a href="#"><</a>
+				<a href="#">></a>
+		</div>
+	</section><!--Fin de la seccion con imagen de fondo -->
+
+	<section id="centrado"> <!-- Inicio seccion de texto -->
+		<div>
+			<img src="img/linea.PNG" alt="linea de borde">
+		</div>
+		<h2>
+			ARE YOU LOOKING FOR SOMETHING INDIVIDUAL? <br />
+			WE DESIGN <a href="#">KITCHEN</a> ,<a href="#">FURNITURE</a>, <a href="#">INTERIOR</a>  AND MUCH MORE. <br />
+			<a href="#">ALL PRODUCTS</a>  ARE DESIGNED FOR YOU.
+		</h2>
+	</section> <!-- Fin seccion de texto -->
+
+	<section class="fondos_imagenes"> <!-- Inicio seccion con efectos de imagenes -->
+		<div class = "primero">
+			<h3>ALL SERVICES</h3>
+			<a href="#">MORE SERVICES</a>			
+		</div>
+		<div class = "segundo">
+			<div class="segundo_dos">
+				<h4>Bespoke Furniture<br/></h4>
+				<p>More Details</p>
+			</div>	
+		</div>
+		<div class="tercero">
+			<div class="tercero_dos">
+			<h4>Floors & Walls<br/></h4>
+			<p>More Details</p>
+			</div>
+		</div>
+		<div class="cuarto">
+			<div class="cuarto_dos">
+			<h4>Kitchens<br/></h4>
+			<p>More Details</p>
+			</div>
+		</div>
+		<div class="quinto">
+			<div class="quinto_dos">
+			<h4>Interior Construction<br/></h4>
+			<p>More Details</p>
+			</div>
+		</div>
+		<div class="sexto">
+			<div class="sexto_dos">
+			<h4>Plannig & Design<br/></h4>
+			<p>More Details</p>
+			</div>
+		</div>
+	</section> <!-- Fin seccion con efectos de imagenes -->
+
+	<section class="new"> <!-- Inicio seccion con texto y una imagen al lado-->
+		<div class="tamaño">
+			<img src="img/linea.PNG" alt="linea de borde">
+			<h3>
+				OUR MATERIALS<br /> ALWAYS HAVE THE<br /> BEST QUALITY
+			</h3>
+			<p class="descrip">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+			</p>
+			<a href="#">Our Materials</a>
+		</div>
+		<div id="img_madera">
+			<img src="img/madera.PNG" alt="imagen de madera">
+		</div>
+	</section> <!-- Fin seccion con texto y una imagen al lado-->
+
+	<section class="madera"> <!-- Inicio seccion con los fundadores-->
+		<div class="fondo_blanco">
+			<div class="texto_fondo">
+				<img src="img/linea.PNG" alt="linea de borde">
+				<h3>WE STARTED OUR OWN BUSINESS EXACTLY 10 YEARS AGO. <br />
+					OUR TARGET WAS TO DO WHAT WE LOVE – FOLLOW OUR PASSION. <br />
+					SEE THE FULL STORY BEHIND CRAFT. <br />
+				</h3>
+				<a href="#">MORE ABOUT US</a>
+			</div>
+			<div class="imagenes_autores">
+				<div id="autor_uno">
+					<img src="img/autor_uno.PNG" alt="Primer autor">
+					<h3>ANDREW F. RICHARD</h3>
+					<p>FOUNDER</p>
+				</div>
+				<div id="autor_dos">
+					<img src="img/autor_dos.PNG" alt="Segundo autor">
+					<h3>JACK B.CORVIN</h3>
+					<p>FOUNDER</p>
+				</div>
+			</div>
+		</div>
+	</section> <!--Fin seccion con los fundadores-->
+
+	<section class="new"> <!-- Inicio seccion con texto y tres imagenes al lado-->
+		<div class="tamaño">
+			<img src="img/linea.PNG" alt="linea de borde">
+			<h3>
+				EXPLORE OUR<br /> SELECTED <br /> PORTFOLIO
+			</h3>
+			<p class="descrip">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+			</p>
+			<a href="#">See more details</a>
+		</div>
+		<div id="tres_imagenes">
+			<img src="img/foto_uno.PNG" alt="imagen de mesa">
+			<img src="img/foto_dos.PNG" alt="imagen de cocina">
+			<img src="img/foto_tres.PNG" alt="imagen de movil">
+		</div>
+	</section> <!-- Fin seccion con texto y tres imagenes al lado-->
+
+	<section id="back"> <!--Inicio de la seccion con fondo de madera y frase-->
+		<div id="back_madera">
+			<h2>LOOKING FOR SOMETHING INDIVIDUAL?</h2>
+			<a href="#">Contact Us</a>
+		</div>
+	</section> <!--Fin de la seccion con fondo de madera y frase-->
+
+	<section id="contact"> <!-- Inicio seccion de contactos -->
+		<div id="email">
+			<h6>FOR INSPIRATIONS, SPECIAL OFFERS AND MUCH MORE</h6>
+			<p>Your e-mail address</p>
+		</div>
+		<div class="list">
+			<ul>
+				<li><a href="#">PINTEREST</a></li>
+				<li><a href="#">FACEBOOK</a></li>
+				<li><a href="#">INSTAGRAM</a></li>
+				<li><a href="#">TWITTER</a></li>
+			</ul>
+		</div>
+		<div class="list">
+			<ul>
+				<li><a href="#">SERVICES</a></li>
+				<li><a href="#">PORTFOLIO</a></li>
+				<li><a href="#">ABOUT</a></li>
+				<li><a href="#">NEWS</a></li>
+			</ul>
+		</div>
+		<div class="list">
+			<ul>
+				<li>MAIN STREET 123</li>
+				<li>12345 LONDON, UK</li>
+				<li><a href="#">+555 - 1234678</a></li>
+				<li><a href="#">CRAFT@EXAMPLE.COM</a></li>
+			</ul>
+		</div>
+	</section> <!-- Fin seccion de contactos -->
+
+	<footer id="pie"> <!-- Inicio pie de pagina -->
+		<div>
+			<p>© 2018 YOOTHEME. ALL RIGHTS RESERVED</p>
+			<img src="img/logo.PNG" alt="Logotipo de la empresa">
+			<div id="enlace">
+				<a href="#">TERMS OF SERVICE</a>
+				<a href="#">IMPRINT</a>
+			</div>
+		</div>
+	</footer> <!-- Fin pie de pagina -->
+
+</body>

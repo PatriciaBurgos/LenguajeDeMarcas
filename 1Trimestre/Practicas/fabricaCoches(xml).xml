@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fabrica>
+
+	<piezas>
+		<pieza numeroReferencia="L2468">
+			<lugarProcedencia>Fabrica</lugarProcedencia>//Elegir entre fabrica o Proveedor
+			<nombre>Faro</nombre>
+			<peso>210</peso>
+			<stock>75</stock>
+		</pieza>
+		<pieza numeroReferencia="P5642">
+			<lugarProcedencia>Proveedor</lugarProcedencia>//Elegir entre fabrica o Proveedor
+			<nombre>Parabrisas</nombre>
+			<peso>76</peso>
+			<stock>902</stock> 
+		</pieza>
+
+	</piezas>
+
+	<cadenaMontaje>
+		<montaje numeroBastidor="9456SDT42VGH85EDF">
+			<piezaMontaje numeroReferencia="L2468">
+			
+				<obreros>
+					<obrero dni="569875268D">
+						<nombre>Juan Antonio</nombre>
+						<apellidos>Jimenez Perez</apellidos>
+						<direccion>Calle Palmeras</direccion>
+						<localidad>Vigo</localidad>
+						<codigoPostal>28019</codigoPostal>
+						<provincia>Galicia</provincia>
+						<fechaIncorporacionEmpresa>25-01-2009</fechaIncorporacionEmpresa>
+					</obrero>
+				</obreros>	
+
+				<pintores> //Extendido de obreros
+					<pintor dni="569412873P">
+						<nombre>Juan Jose</nombre>
+						<apellidos>Jimenez Lopez</apellidos>
+						<direccion>Calle Palmeritas</direccion>
+						<localidad>Vigo</localidad>
+						<codigoPostal>28019</codigoPostal>
+						<provincia>Galicia</provincia>
+						<fechaIncorporacionEmpresa>30-01-2012</fechaIncorporacionEmpresa>
+						<fechaExamen>30-01-2006</fechaExamen>
+					</pintor>
+				</pintores>
+
+				<trabajadores>
+					<trabajador dni="598426589S">
+						<nombre>Juan</nombre>
+						<apellidos>Puentes Lopez</apellidos>
+						<direccion>Calle Palmeral</direccion>
+						<localidad>Vigo</localidad>
+						<codigoPostal>28019</codigoPostal>
+						<provincia>Galicia</provincia>
+						<fechaIncorporacionEmpresa>15-01-2008</fechaIncorporacionEmpresa>
+					</trabajador>
+				</trabajadores>
+			
+			</piezaMontaje>
+		</montaje>
+	</cadenaMontaje>
+
+</fabrica>

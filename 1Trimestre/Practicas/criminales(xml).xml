@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<criminales>
+	<criminal dni="236584569" genero="M">
+		<nombre>Maria Tania Varela Otero</nombre>
+		<fechaNacimiento>
+			<dia>17</dia>
+			<mes>01</mes>
+			<ano>1974</ano>
+		</fechaNacimiento>
+		<altura>168</altura>
+		<descripcionFisica>Ojos marrones, piel blanca y contextura delgada</descripcionFisica>
+		<historialMedico />
+		<residencia>
+			<direccion>Avenida de la Paz</direccion>
+			<localidad>Vigo</localidad>
+			<codigoPostal>28019</codigoPostal>
+			<provincia>Galicia</provincia>
+		</residencia>
+		<estado>carcel</estado>
+		<delitos>Trafico ilícito de estupefacientes; Blanqueo de los productos del delito; Participacion en una organizacion criminal</delitos>
+		<juzgado>no</juzgado>
+		<penaCarcel>7años</penaCarcel>
+		<pena>En proceso</pena>
+	</criminal>
+</criminales>

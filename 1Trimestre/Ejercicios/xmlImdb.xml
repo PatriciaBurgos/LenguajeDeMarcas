@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imdb>
+	<peliculas>
+		<pelicula>
+			<titulo> Beauty and Beast </titulo> 
+			<reparto>
+				<personaje> Bella </personaje>
+					<actor> Emma Watson </actor>
+			</reparto>
+			<fichaTecnica>
+				<director> Jhon Smith </director>
+				<productor> Wally </productor>
+				<guion> Jessica Smith </guion>
+				<calificacion> 8.3 </calificacion>
+			</fichaTecnica>
+			<palmares>
+				<premios> Mejor pelicula </premios>
+			</palmares>
+			<traduccionTitulo> Bella y bestia </traduccionTitulo>
+			<nacionalidad> Ingles </nacionalidad>
+			<duracion> 135 </duracion>
+		</pelicula>
+	</peliculas>
+</imdb>

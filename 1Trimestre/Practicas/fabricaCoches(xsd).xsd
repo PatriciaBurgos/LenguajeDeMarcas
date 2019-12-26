@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="fabrica">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="piezas">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="grupoPiezas"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="cadenaMontaje">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="grupoCadenaMontaje"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:group name="grupoPiezas">
+		<xs:sequence>
+			<xs:element name="pieza" type="tipoPieza"/>
+		</xs:sequence>
+	</xs:group>
+
+	<xs:group name="grupoCadenaMontaje">
+		<xs:sequence>
+			<xs:element name="montaje" type="tipoMontaje"/>
+		</xs:sequence>
+	</xs:group>
+
+
+	<xs:complexType name="tipoPieza">
+		<xs:sequence>
+			<xs:element name="lugarProcedencia" type="tipoLugar"/>
+			<xs:element name="nombre"/>
+			<xs:element name="peso" type="xs:positiveInteger"/>
+			<xs:element name="stock" type="xs:positiveInteger"/>
+		</xs:sequence>
+		<xs:attribute name="numeroReferencia">
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z][0-9]{4}"/>
+			</xs:restriction>
+		</xs:attribute>
+	</xs:complexType>
+
+
+	<xs:simpleType name="tipoLugar">
+		<xs:choice>
+			<xs:element name="fabrica"/>
+			<xs:element name="proveedor"/>
+		</xs:choice>
+	</xs:simpleType>
+
+
+	<xs:complexType name="tipoMontaje">
+		<xs:sequence>
+			<xs:element name="piezaMontaje" type="tipoPiezaMontaje"/>
+		</xs:sequence>
+		<xs:attribute name="numeroBastidor">
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-HJ-NPR-Z0-9]{17}"/>
+			</xs:restriction>
+		</xs:attribute>
+	</xs:complexType>
+
+
+	<xs:complexType name="tipoPiezaMontaje">
+		<xs:sequence>
+			<xs:element name="obreros" type="tipoNombreObreros"/>
+			<xs:element name="pintores" type="tipoNombrePintores"/>
+			<xs:element name="trabajadores" type="tipoNombreTrabajadores"/>
+		</xs:sequence>
+		<xs:attribute name="numeroReferencia">
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z][0-9]{4}"/>
+			</xs:restriction>
+		</xs:attribute>
+	</xs:complexType>
+
+
+	<xs:complexType name="tipoNombreObreros">
+		<xs:sequence>
+			<xs:element name="obrero" type="tipoObrero"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="tipoNombrePintores">
+		<xs:sequence>
+			<xs:element name="pintor" type="tipoObreroAmpliado"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="tipoNombreTrabajadores">
+		<xs:sequence>
+			<xs:element name="trabajador" type="tipoObrero"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="tipoObrero">
+		<xs:sequence>
+			<xs:element name="nombre" type="tipoNombre"/>
+			<xs:element name="apellidos" type="tipoApellidos"/>
+			<xs:element name="direccion" type="xs:string"/>
+			<xs:element name="localidad" type="tipoProvincia"/>
+			<xs:element name="codigoPostal" type="tipoCodigoPostal"/>
+			<xs:element name="provincia" type="tipoProvincia"/>
+			<xs:element name="fechaIncorporacionEmpresa" type="xs:date"/>
+		</xs:sequence>
+		<xs:attribute name="dni">
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A-Z]+[1-9]{8}[A-Z]"/>
+			</xs:restriction>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="tipoObreroAmpliado">
+		<xs:complexContent>
+			<xs:extension base="tipoObrero">
+				<xs:sequence>
+					<xs:element name="fechaExamen"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="tipoNombre">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="35"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="tipoApellidos">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="70"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="tipoProvincia">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+    
+	<xs:simpleType name="tipoCodigoPostal">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[0-9]{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
+
+
+
+
+
+
+
+
+
+
+

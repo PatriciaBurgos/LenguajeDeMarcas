@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="w:document">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="w:body">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="bodyDocument"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:group name="bodyDocument">
+		<xs:all>
+			<xs:element name="w:p" type=" tipoP">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:attributeGroup name="atributoP"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="w:sectPr" type="tipoSec"/> ----------
+		</xs:all>
+	</xs:group>
+
+	<xs:complexType name="tipoP">
+		<xs:all>
+			<xs:element name="w:r" type="tipoR"/>
+			<xs:element name="w:bookmarkStart">
+				<xs:attributeGroup name="atributoBS"/>
+			</xs:element>
+			<xs:element name="w:bookmarkEnd">
+				<xs:attributeGroup name="atributeBE"/>
+			</xs:element>
+		</xs:all>
+	</xs:complexType> 
+
+
+	<xs:simpleType name="tipoR">
+		<xs:sequence>
+			<xs:element name="w:rPr" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="w:t" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="w:rlsidRPr"/>
+	</xs:simpleType>
+
+
+
+	<xs:attributeGroup name="atributoBS">
+		<xs:complexType>
+			<xs:attribute name="w:id" type="xs:interger"/>
+			<xs:attribute name="w:name" type="xs:string"/>
+		</xs:complexType>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="atributoBE">
+		<xs:complexType>
+			<xs:attribute name="w:id" type="xs:interger"/>
+		</xs:complexType>
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="atributoP">
+		<xs:complexType>
+			<xs:attribute name="w:rsidR" type="xs:string"/>
+			<xs:attribute name="w:rsidRDefault" type="xs:string"/>
+		</xs:complexType>
+	</xs:attributeGroup>
+
+	<xs:complexType name="tipoSec">
+		<xs:sequence>
+			<xs:element name="w:pgSz">
+				<xs:complexType>
+					<xs:attribute name="w:w" type="xs:string"/>
+					<xs:attribute name="w:h" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="w:pgMar">
+				<xs:complexType>
+					<xs:attribute name="w:top" type="xs:string"/>
+					<xs:attribute name="w:right" type="xs:string"/>
+					<xs:attribute name="w:bottom" type="xs:string"/>
+					<xs:attribute name="w:left" type="xs:string"/>
+					<xs:attribute name="w:footer" type="xs:string"/>
+					<xs:attribute name="w:gutter" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="w:cols">
+				<xs:complexType>
+					<xs:attribute name="w:space" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="w:docGrid">
+				<xs:complexType>
+					<xs:attribute name="w:linePitch" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

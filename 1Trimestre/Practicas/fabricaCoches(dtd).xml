@@ -1,0 +1,46 @@
+<!DOCTYPE fabrica [
+<!ELEMENT criminales (piezas, cadenaMontaje)+>
+<!ELEMENT piezas (pieza+)>
+<!ELEMENT pieza (lugarProcedencia, nombre, peso, stock)>
+<!ATTLIST pieza numeroReferencia ID #REQUIRED>
+<!ELEMENT lugarProcedencia (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT peso (#PCDATA)>
+<!ELEMENT stock (#PCDATA)>
+<!ELEMENT cadenaMontaje (montaje+)>
+<!ELEMENT montaje (piezaMontaje)+>
+<!ATTLIST montaje numeroBastidor ID #REQUIRED>
+<!ELEMENT piezaMontaje (obreros, pintores, trabajadores)+>
+<!ATTLIST piezaMontaje numeroReferencia ID #REQUIRED>
+<!ELEMENT obreros (obrero)*>
+<!ELEMENT obrero (nombre, apellidos, direccion, localidad, codigoPostal, provincia, fechaIncorporacionEmpresa)>
+<!ATTLIST obrero dni ID #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT codigoPostal (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT fechaIncorporacionEmpresa (#PCDATA)>
+<!ELEMENT pintores (pintor)*>
+<!ELEMENT pintor (nombre, apellidos, direccion, localidad, codigoPostal, provincia, fechaIncorporacionEmpresa, fechaExamen)>
+<!ATTLIST pintor dni ID #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT codigoPostal (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT fechaIncorporacionEmpresa (#PCDATA)>
+<!ELEMENT fechaExamen (#PCDATA)>
+<!ELEMENT trabajadores (trabajador)*>
+<!ELEMENT trabajador (nombre, apellidos, direccion, localidad, codigoPostal, provincia, fechaIncorporacionEmpresa)>
+<!ATTLIST trabajador dni ID #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT codigoPostal (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT fechaIncorporacionEmpresa (#PCDATA)>
+]>

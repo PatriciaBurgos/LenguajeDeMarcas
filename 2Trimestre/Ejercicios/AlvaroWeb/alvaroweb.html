@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ALVARO WEB</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Patricia">
+	<meta name="descripcion" content="Prueba en página web">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		@font-face{
+			font-family: 'Ubuntu';
+			src: url(font/Ubuntu-Regular.ttf);
+		}
+		@font-face{
+			font-family: 'UbuntuBold';
+			src: url(font/Ubuntu-Bold.ttf);
+		}
+		body {	
+			margin: 0;
+			font-size: 100%;
+			font-family: 'Ubuntu';
+		}
+		#encabezado {
+			background-image:url(img/fondo.png);
+			background-repeat: repeat-x;
+			overflow: hidden;
+			width: 100%;
+			margin-top: 0;
+			font-size: 18px;
+			color: white;
+			margin-bottom: 0;
+			height: 95px;
+			z-index: -1;
+		}
+		#imag {
+			width: 293px;
+			height: 190px;
+			float: left;
+			overflow: auto;
+			margin-left: 5%;
+		}
+		#menu_uno {
+			float: left;
+			overflow: hidden;
+			margin-top: 0;
+			padding: 0;
+			width: 900px;
+			font-size: 62%;
+			text-align: right;
+			padding-left: 20px;
+		}
+		#menu_dos{
+			float:left;
+			overflow: auto;
+			width: 900px;
+			font-size: 1.3em;
+			text-align: right;
+
+		}
+		.activo {
+			color: #DFDB44;
+			border-bottom: 12px solid #DFDB44;
+		}
+		.a1 {
+			color:grey;
+		}
+		#menu_dos a:hover{
+			color: white;
+		}
+		#menu_uno a:link, #menu_dos a:link{
+			text-decoration: none;
+		}
+		#menu_uno li {
+			display: inline-block;
+			padding-left: 12px;
+		}
+		#menu_dos li {
+			display: inline-block;
+			padding-left: 12px;
+		}
+		#menu_dos ul {
+			margin-top: 0;
+		}
+		#menu_uno a:hover {
+			color: white;
+			text-decoration: underline;
+		}
+		.activo a:link, .activo a:visited, .activo a:active {
+			color: #DFDB44;
+		}
+		#menu_dos a:link, #menu_dos a:visited, #menu_dos a:active {
+			color: white;
+		}
+		#menu_dos li{
+			padding-left: 16px;
+		}
+		#menu_dos a:hover {
+			color: #DFDB44;
+		}
+		.fondo {
+			background-image: url(img/fondo2.jpg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: auto;
+			height: 625px;
+		}
+		.contenido {
+			height: 655px;
+			max-width: 1200px;
+   			margin: 0;
+    		width: 100%;
+    		min-height: 20px;
+		}
+		.contenido_menu {	
+			max-width: 1200pX;
+			margin:0;
+			position: absolute;
+			top: 100px;
+			margin-left: 30px;
+		}
+		a.disenioweb, a.tiendas_online, a.posicionamiento, a.analitica, a.cobertura, a.comunicacion{
+			display: block;
+			width: 450px;
+			height: 19px;
+			color: white;
+			background-image: url(img/fondo3.PNG);
+			background-repeat: no-repeat;
+			border-bottom-right-radius: 10px;
+			border-bottom: none;
+			margin-bottom: 7px;
+			font-size: 23px;
+			position: relative;
+			padding-bottom: 40px;
+			margin-top: 7px;		
+			text-decoration: none;			
+		}
+		ul {
+			list-style-type: none;
+		}
+		.disenioweb a:hover, a.tiendas_online a:hover, a.posicionamiento a:hover, a.analitica a:hover, a.cobertura a:hover, a.comunicacion a:hover {
+			background-color: black;
+			/*no funciona*/
+		}
+		a.contacta {
+			display: block;
+			width: 450px;
+			height: 19px;
+			color: #DFDB44;
+			background-color: black;
+			background-repeat: no-repeat;
+			border-bottom-right-radius: 10px;
+			border-bottom: none;
+			font-size:37px;
+			position: relative;
+			margin-top: 35px;
+			padding-bottom: 40px;
+			text-decoration: none;
+		}
+		.icon {
+			padding-top: 7px;
+		}
+		h2 {
+			font-size: 3em;
+			padding-top: 30px;
+			padding-left: 10%;
+		}
+		.texto {
+			padding-left: 10%;
+			margin-right: 3%;
+			font-size: 1em;
+			float: left;
+			overflow: auto;
+			width: 50%;
+			text-align: justify;
+		}
+		.texto2 {
+			float: left;
+			overflow: auto;
+			font-size: 22px;
+			padding-right: 10%;
+			margin-left: 3%;
+			margin-bottom: 60px;
+			width: 24%;
+			margin-top: 0;
+		}
+		.infor {
+			background-image: url(img/fondo3.PNG);
+			background-repeat: no-repeat;
+			border-bottom-right-radius: 10px;
+			border-bottom: none;
+			font-size: 23px;
+			margin-top: 2%;
+			margin-left: 10%;
+			margin-bottom: 10%;
+			display: inline-block;
+			float: left;
+			overflow: auto;
+			height: 30px;
+			padding: 3px;
+		}
+		.infor a:link, .infor a:visited, .infor a:active {
+			color: white;
+			text-decoration: none;
+		}
+		.infor a:hover {
+			color: #DFDB44;
+		}
+		.negrita {
+			font-weight: bold;
+		}
+		.retrato {
+			background-image: url(img/fondo4.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: 625px;
+			display: block;
+			float: left;
+			overflow: auto;
+		}
+		.boton {
+			text-align:center;
+			display: block;
+		    width: 100px;
+		    height: 48px; 
+			background-color: grey;
+			color: white;
+			border-bottom-right-radius: 10px;
+			border-bottom: none;
+			text-decoration: none;
+			float: left;
+			overflow: auto;
+		}
+		.boton a:hover {
+			background-color: black;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<section id="encabezado">
+		<div>
+			<div id="imag"><img src="img/logo.png"></div>
+		</div>
+		<div>
+			<div id="menu_uno"> 
+				<ul>
+					<li><a class="a1" href="#">Diseñador web freelance</a></li>
+					<li><a class="a1" href="#">Trabaja con nosotros</a></li>
+					<li><a class="a1" href="#">Blog</a></li>
+				</ul>
+			</div> 
+			<div id="menu_dos">
+				<ul>
+					<li class="activo"><a href="#">Inicio</a></li>
+					<li><a class="a1" href="#">Servicios</a></li>
+					<li><a class="a1" href="#">Trabajos</a></li>
+					<li><a class="a1" href="#">Contacto</a></li>
+				</ul>
+			</div> 
+		</div>
+	</section>
+	<section class="fondo">
+		<div class="contenido">
+			<div class="contenido_menu">
+				<ul>
+					<li><a class="disenioweb" href="#"><img class="icon" src="img/dis.PNG"> Diseño web</a></li>
+					<li><a class="tiendas_online" href="#"><img class="icon" src="img/tie.PNG"> Tiendas online</a></li>
+					<li><a class="posicionamiento" href="#"><img class="icon" src="img/pos.PNG"> Posicionamiento en buscadores</a></li>
+					<li><a class="analitica" href="#"><img class="icon" src="img/ana.PNG"> Analítica web y marketing online</a></li>
+					<li><a class="comunicacion" href="#"><img class="icon" src="img/com.PNG"> Comunicación y redes sociales</a></li>
+					<li><a class="cobertura" href="#"><img class="icon" src="img/cob.PNG"> Cobertura legal</a></li>
+				</ul>
+				<ul>
+					<li><a class="contacta" href="#"><img class="icon" src="img/cont.PNG"> Contacta</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div><h2>Hola :)</h2></div> 
+		<div class="texto">
+			<p>Soy Álvaro Fernández y llevo cerca de 14 años trabajando en exclusiva como 
+				<span class="negrita"> diseñador web freelance.</span>
+			Lo que comenzó siendo un trabajo más o menos abarcable para una sola persona, se ha ido convirtiendo con los años en un sector multidisciplinar que precisa necesariamente de la intervención de diferentes gremios y especialidades. 
+			</p>
+			<p>
+				La experiencia de todos estos años de trabajo me han permitido ir creando un sólido equipo de colaboradores altamente especializados en diversas áreas del entorno web. Siempre acompañado por Txomin Bengoa, otro profesional del sector con el que me asocié en 2009 y con el tengo la suerte de trabajar día a día, cada vez con más ilusión.
+			</p>
+		</div>
+		<div class="texto2">
+			<p>Ofrezco soluciones integrales a empresas y profesionales de cara a crear su imagen digital y a conectar con sus usuarios, ya sea mediante grandes o pequeños presupuestos
+			</p>
+		</div>
+		<div class="infor">
+			<a href="#">+ información sobre mi >></a>
+		</div>
+	</section>
+	
+	<section class="retrato"></section> 
+
+	<section>
+		<div class="boton"><a href="#"></a>^</div>
+
+	</section>
+
+
+
+	</div>
+
+</body>
+
+</html>
